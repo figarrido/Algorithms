@@ -4,8 +4,10 @@ __author__ = 'figarrido'
 
 
 def Invertion(A):
+    global per
     if len(A) == 1:
         return []
+
     X = Invertion(A[:len(A) // 2])
     Y = Invertion(A[len(A) // 2:])
 
@@ -29,6 +31,7 @@ def InvertionSplit(P, Q):
         if P[i] < Q[j]:
             for l in I:
                 l[1] += [P[i]]
+
             i += 1
 
         elif Q[j] < P[i]:
