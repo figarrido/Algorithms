@@ -22,7 +22,6 @@ Invertion(A) retorna:
 
 
 def Invertion(A):
-    global per
     if len(A) == 1:
         return []
 
