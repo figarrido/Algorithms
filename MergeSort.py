@@ -1,5 +1,24 @@
 __author__ = 'figarrido'
 
+"""
+MergeSort:
+Recibe un arreglo de números desordenados, este los separa en mitades
+(mitad izquierda y mitad derecha) ordenando estas con el mismo algoritmo.
+Se crea un arreglo de la misma dimension que el ingresado y se empieza a
+completar de inicio a fin con los elementos de los arreglos que están a la
+mitad. Se tiene un 'puntero' para cada arreglo que está a la mitad, ambos
+comienzan en el primer elemento de cada uno, se verifica cuál es el menor de
+estos elementos y este es el que se agrega en el arreglo final y el puntero
+del arreglo del que se eligió el elemento se aumenta en una unidad, así
+hasta utilizar todos los elementos.
+
+Ejemplo:
+A = [2, 5, 3, 1, 6, 4]
+
+MergeSort retorna:
+[1, 2, 3, 4, 5, 6]
+"""
+
 
 def MergeSort(A):
     if len(A) == 1:
