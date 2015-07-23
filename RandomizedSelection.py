@@ -4,8 +4,14 @@ from random import randint
 __author__ = "figarrido"
 """
 RSelection:
-Dentro de una lista de números desordenados retorna el i-ésimo elemento más
-pequeño.
+Recibe un arreglo de números en desorden y el número del i-ésimo número más
+pequeño, elige un número (pivote) aleatoriamente y lo intercambia con el
+primer elemento del arreglo luego se ordenan los elementos menores al pivote
+inmediatamente después de este y después del último elemento de los menores
+comienzan los elementos mayores, se intercambia el pivote con el último
+elemento menor y luego se verifica qué posición posee el pivote, en caso de no
+ser la posición deseada se realiza el mismo proceso con los números menores o
+mayores según corresponda.
 
 Ejemplo:
 A = [10, 32, 25, 18, 40, 63]
