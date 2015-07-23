@@ -3,8 +3,10 @@ __author__ = 'figarrido'
 
 """
 MergeSort:
-Recibe un arreglo de números desordenados, este los separa en mitades
-(mitad izquierda y mitad derecha) ordenando estas con el mismo algoritmo.
+Recibe un arreglo de números desordenados y una función que indique según qué
+valor se desea ordenar, por defecto es el mismo valor, este los separa en
+mitades (mitad izquierda y mitad derecha) ordenando estas con el mismo
+algoritmo.
 Se crea un arreglo de la misma dimension que el ingresado y se empieza a
 completar de inicio a fin con los elementos de los arreglos que están a la
 mitad. Se tiene un 'puntero' para cada arreglo que está a la mitad, ambos
@@ -21,24 +23,24 @@ MergeSort retorna:
 """
 
 
-def MergeSort(A):
+def MergeSort(A, key=lambda x: x):
     if len(A) == 1:
         return A
 
     out = [None for _ in A]
-    B = MergeSort(A[:len(A) // 2])
-    C = MergeSort(A[len(A) // 2:])
+    B = MergeSort(A[:len(A) // 2], key)
+    C = MergeSort(A[len(A) // 2:], key)
 
     i, j = 0, 0
     for k in range(len(out)):
         if not (i < len(B) and j < len(C)):
             break
 
-        if B[i] < C[j]:
+        if key(B[i]) < key(C[j]):
             out[k] = B[i]
             i += 1
 
-        elif C[j] < B[i]:
+        elif key(C[j]) < key(B[i]):
             out[k] = C[j]
             j += 1
 
