@@ -2,6 +2,7 @@
 *.pyc
 
 #
+__init__.py
 *.md~
 *.py~
 
