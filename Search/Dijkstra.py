@@ -1,4 +1,3 @@
-from GraphDirected import cargarGrafo
 __author__ = 'figarrido'
 
 
@@ -19,11 +18,3 @@ def dijkstra(V, s):
         seen += [minE.target]
 
     return length
-
-G = cargarGrafo('../dijkstraData.txt')
-
-distance = dijkstra(G, G[0])
-targets = [7, 37, 59, 82, 99, 115, 133, 165, 188, 197]
-
-for target in targets:
-    print(str(target) + ':', distance[target])

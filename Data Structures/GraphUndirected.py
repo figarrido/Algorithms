@@ -132,14 +132,20 @@ def cargarGrafo(filename, sep='\t'):
                 aristas += [(label, int(i))]
 
     for a in aristas:
+        u, v = None, None
         for j in Vertex.V:
             if j.label == a[0]:
                 u = j
             if j.label == a[1]:
                 v = j
+            if u and v:
+                break
         e = Edge(u, v)
-        u.addEdge(e)
-        v.addEdge(e)
+        if u != v:
+            u.addEdge(e)
+            v.addEdge(e)
+        else:
+            u.addEdge(e)
 
     return Vertex.V, Edge.E
 
@@ -147,3 +153,12 @@ def cargarGrafo(filename, sep='\t'):
 def limpiar():
     Vertex.V.clear()
     Edge.E.clear()
+
+
+# a = cargarGrafo('../kargerMinCut.txt')
+
+# for v in a[0]:
+#     print(v)
+#     for e in v.edges:
+#         print(e)
+#     print()

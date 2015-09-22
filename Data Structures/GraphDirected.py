@@ -1,5 +1,4 @@
 __author__ = 'figarrido'
-from time import time
 
 
 class Vertex:
@@ -90,7 +89,6 @@ def cargarGrafo(filename, sep='\t'):
                 x, y = i.split(',')
                 v.aux += [(int(x), int(y))]
             line = file.readline()
-
 
     for v in Vertex.V:
         v.aux = getattr(v, 'aux', [])

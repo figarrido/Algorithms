@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from MergeSort import MergeSort
+from ..Sort import MergeSort
 __author__ = 'figarrido'
 
 """
